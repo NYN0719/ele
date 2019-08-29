@@ -8,12 +8,12 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    // HelloWorld
   }
 }
 </script>
@@ -23,7 +23,8 @@ export default {
 .box{
   width: 750px;
   height:60px;
-  padding: 4px;
+  line-height: 60px;
+  padding: 6px;
   font-size: 26px;
   background: #3190e8;
   position: fixed;
