@@ -1,19 +1,17 @@
 <template>
   <div class="home">
-    <div class="box">
-    	我是
-    </div>
+    <head-bar>我的</head-bar>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import headBar from '@/components/headBar.vue'
 
 export default {
   name: 'home',
   components: {
-    // HelloWorld
+    headBar
   }
 }
 </script>
