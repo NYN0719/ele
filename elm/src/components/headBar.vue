@@ -2,13 +2,25 @@
     <div>
         <header>
             <span>&lt;</span>
-            <slot></slot>
+            <!-- <slot></slot> -->
+            {{title}}
+
+            <div class="left">
+                <slot name="left"></slot>
+            </div>
+            <div class="right">
+                <slot name="right"></slot>
+            </div>
+            
+            
+
+
         </header>
     </div>
 </template>
 <script>
 export default {
-    
+    props:['title']
 }
 </script>
 <style scoped>
@@ -24,5 +36,11 @@ export default {
         float: left;
         margin-left: .2rem;
         line-height: 1rem;
+    }
+    header>.left{
+        float: left;
+    }
+    header>.right{
+        float: right;
     }
 </style>

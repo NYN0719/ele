@@ -1,11 +1,17 @@
 <template>
   <div class="home">
-    <head-bar>我的</head-bar>
-    <div class="box">
+    <head-bar :title="'个人中心'"></head-bar>
+    <br>
+    <head-bar>
+      <template v-slot:left>ele.m</template>
+      <template v-slot:right>登录|注册</template>
+    </head-bar>
+
+    <!-- <div class="box">
     	<div class="t_head_left">
     		ele.me
     	</div>
-    </div>
+    </div> -->
   </div>
 </template>
 
