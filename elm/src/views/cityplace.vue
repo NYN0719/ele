@@ -1,10 +1,6 @@
 <template>
   <div class="home">
-    <div class="box">
-    	<div class="t_head_left">
-    		ele.me
-    	</div>
-    </div>
+    哈哈哈
   </div>
 </template>
 
@@ -23,7 +19,7 @@ export default {
 <style>
 *{margin:0;padding:0;}
 .box{
-  width: 750px;
+  width: 730px;
   height:60px;
   line-height: 60px;
   padding: 10px;
@@ -37,6 +33,12 @@ export default {
 .t_head_left{
 	width: 50%;
 	height: 60px;
+	float: left;
 
+}
+.t_head_right{
+	width: 50%;
+	height: 60px;
+	float: right;
 }
 </style>
