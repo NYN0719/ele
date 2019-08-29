@@ -1,26 +1,21 @@
 <template>
     <div>
         <header>
-            <span>&lt;</span>
-            <!-- <slot></slot> -->
-            {{title}}
-
             <div class="left">
                 <slot name="left"></slot>
+            </div>
+            <div class="center">
+                <slot name="center"></slot>
             </div>
             <div class="right">
                 <slot name="right"></slot>
             </div>
-            
-            
-
-
         </header>
     </div>
 </template>
 <script>
 export default {
-    props:['title']
+
 }
 </script>
 <style scoped>
@@ -31,16 +26,13 @@ export default {
         text-align: center;
         line-height: 1rem;
         font-size: .4rem;
+        display: flex;
     }
-    header>span{
-        float: left;
-        margin-left: .2rem;
-        line-height: 1rem;
+    header>div{
+        text-align: center;
+        flex: 2;
     }
-    header>.left{
-        float: left;
-    }
-    header>.right{
-        float: right;
+    header >div:nth-of-type(2){
+        flex: 6;
     }
 </style>
