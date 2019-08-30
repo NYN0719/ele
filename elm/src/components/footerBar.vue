@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-@import './../assets/css/icon_footer/iconfont.css';
+
 footer {
   width: 100%;
   line-height: 0.8rem;
