@@ -7,9 +7,11 @@
     </head-bar>
 
     <div>
-      <shop-list :list="item"></shop-list>
+      <shop-list :list="item"> </shop-list>
+      <img :src="yanUrl" />
+      
     </div>
-    
+    <alert-window></alert-window>
     <footer-bar></footer-bar>
   </div>
 </template>
@@ -19,6 +21,7 @@
 import headBar from "@/components/headBar.vue";
 import footerBar from "@/components/footerBar.vue";
 import shopList from "@/components/shopList.vue";
+import alertWindow from "@/components/alertWindow.vue";
 
 export default {
   name: "home",
@@ -26,11 +29,18 @@ export default {
     headBar,
     footerBar,
     shopList,
+    alertWindow,
   },
   data() {
     return {
-      item: 6
-    };
+      item: 6,
+      yanUrl: ""
+    }
+  },
+  created() {
+    this.$axios.post("http://elm.cangdu.org/v1/captchas").then(data => {
+      this.yanUrl = data.data.code
+    });
   }
 };
 </script>

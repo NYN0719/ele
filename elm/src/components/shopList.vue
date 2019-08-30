@@ -12,7 +12,18 @@
 
 <script>
 export default {
-    props:['list']
+    props:['list'],
+    data(){
+      return {
+
+      }
+    },
+    created(){
+
+    },
+    methods:{
+
+    },
 };
 </script>
 

@@ -4,11 +4,18 @@ import router from './router'
 import store from './store'
 import 'lib-flexible'
 import './assets/css/icon_footer/iconfont.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
+Vue.use(VueAxios,axios)
+axios.defaults.withCredentials = true
+Vue.prototype.$axios = axios;
 
 new Vue({
   router,
   store,
+  axios,
+  VueAxios,
   render: h => h(App)
 }).$mount('#app')

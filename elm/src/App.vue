@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <!-- <div id="nav"> -->
-      <!-- <div class="box">
-        
-      </div> -->
-    <!-- </div> -->
+    
     <router-view/>
   </div>
 </template>
@@ -17,5 +13,15 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
+}
+a{
+  color: white;
+}
+button{
+  color: white;
+  background-color: rgb(0, 153, 255);
+  border: none;
+  outline: none;
 }
 </style>

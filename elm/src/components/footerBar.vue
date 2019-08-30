@@ -1,18 +1,18 @@
 <template>
   <footer>
-    <router-link to="" @click.native="num=0">
+    <router-link to="">
       <i class="iconfont icon-SSS" :class="{active:num==0}"></i>
       <p>外卖</p>
     </router-link>
-    <router-link @click.native="num=1" to="">
+    <router-link to="/search">
       <i class="iconfont icon-dingdan" :class="{active:num==1}"></i>
       <p>搜索</p>
     </router-link>
-    <router-link to="" @click.native="num=2">
+    <router-link to="/orderList">
       <i class="iconfont icon-zhinanzhen" :class="{active:num==2}"></i>
       <p>订单</p>
     </router-link>
-    <router-link to="" @click.native="num=3">
+    <router-link to="/myself">
       <i class="iconfont icon-wode" :class="{active:num==3}"></i>
       <p>我的</p>
     </router-link>
@@ -21,11 +21,7 @@
 
 <script>
 export default {
-  data() {
-    return {
-      num: 0
-    };
-  }
+  props:["num"]
 };
 </script>
 
