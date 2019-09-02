@@ -3,11 +3,23 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'lib-flexible'
+<<<<<<< HEAD
 import "swiper/dist/css/swiper.min.css"
+=======
+import './assets/css/icon_footer/iconfont.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+>>>>>>> 50f65a26cfa796e3dba794214212f7080a4119bd
 Vue.config.productionTip = false
+Vue.use(VueAxios,axios)
+axios.defaults.withCredentials = true
+Vue.prototype.$axios = axios;
 
 new Vue({
   router,
   store,
+  axios,
+  VueAxios,
   render: h => h(App)
 }).$mount('#app')
