@@ -1,4 +1,47 @@
 <template>
+<<<<<<< HEAD
+	<div class="fixedhead">
+		<header class="header">
+			<slot></slot>
+			<div class="right">
+				<slot name="right"></slot>
+			</div>
+			<div class="left">
+				<slot name="left"></slot>
+			</div>
+		</header>
+	</div> 
+</template>
+
+<script>
+	export default{
+
+	}
+</script>
+
+<style>
+	a{text-decoration: none;}
+	header{
+		
+		
+	}
+	.header{
+		width: 720px;
+		height: 70px;
+		line-height: 70px;
+		font-size: 30px;
+		padding: 15px;
+		background: #3190e8;
+		text-align: center;
+		color: #fff;
+	}
+	.left{
+		float: left;
+	}
+	.right{
+		float: right;
+	}
+=======
     <div>
         <header>
             <div class="left">
@@ -35,4 +78,5 @@ export default {
     header >div:nth-of-type(2){
         flex: 6;
     }
+>>>>>>> bdb21a5bf79ea046fc99c1f204480216669b0e48
 </style>
