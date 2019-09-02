@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/cityplace.vue'
-
+//import Home from './views/cityplace.vue'
+//import headbar from './components/headbar(2).vue'
+import xiangqing from './views/xiangqing.vue'
+//import VueResource from 'vue-resource'
 
 Vue.use(Router)
+//Vue.use(VueResource)
 
 export default new Router({
   mode: 'history',
@@ -12,7 +15,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: xiangqing
     },
     // {
     //   path: '/about',
