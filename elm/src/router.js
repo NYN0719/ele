@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/cityplace.vue'
-
+import Searchcity from './views/searchcity.vue'
+import VueResource from 'vue-resource'
 
 Vue.use(Router)
+Vue.use(VueResource)
 
 export default new Router({
   mode: 'history',
@@ -12,7 +14,13 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      props:route => ({name:route.query.cityname})
+    },
+    {
+      path: '/searchcity',
+      name: 'searchcity',
+      component: Searchcity
     },
     // {
     //   path: '/about',
