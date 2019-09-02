@@ -86,9 +86,18 @@
 			},
 			history(i){
 				console.log(i)
-				this.hisrecords.push(JSON.stringify(i))
-				console.log(this.hisrecords)
-				localStorage.hisrecords = this.hisrecords
+				// this.hisrecords.push(i)
+				
+				if(this.hisrecords == true){
+					return false
+				}else{
+					this.hisrecords.push(i)
+					console.log(this.hisrecords)
+				}
+				// this.hisrecords.push(JSON.stringify(i))
+				// console.log(this.hisrecords)
+				// 
+				// localStorage.hisrecords = this.hisrecords
 			},
 			clearhistory(){
 				localStorage.clear()
@@ -102,11 +111,11 @@
 			// console.log(this.$route.query.cityname)
 			console.log(this.$route.query)
 			
-			if(localStorage.hisrecords){
-				this.hisrecords.push(JSON.parse(localStorage.hisrecords))
-			}else{
-				this.hisrecords = []
-			}
+			// if(localStorage.hisrecords){
+			// 	this.hisrecords.push(JSON.parse(localStorage.hisrecords))
+			// }else{
+			// 	this.hisrecords = []
+			// }
 		},
 		
 	}
