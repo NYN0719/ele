@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Register from './views/register.vue'
+import Amend from './views/amend.vue'
 
 Vue.use(Router)
 
@@ -12,6 +14,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path:'/register',
+      name:'register',
+      component:Register
+    },
+    {
+      path:'/amend',
+      name:'amend',
+      comments:Amend
     },
     {
       path: '/about',
