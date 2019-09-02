@@ -38,13 +38,7 @@
 			<p>{{j.address}}</p>
 			
 		</div>
-		<div @click="clearhistory" class="clearhistory">清空历史</div>
-		<!-- <ul class='list' v-for="(j,jindex) in hisrecords">
-			<li>
-				<p>{{j.name}}</p>
-				<p>{{j.address}}</p>
-			</li>
-		</ul> -->
+		<div @click="clearhistory" class="clearhistory" v-show="cleartype">清空历史</div>
 	</div>
 </template>
 
@@ -59,7 +53,8 @@
 				searchtext:'',
 				searchlist:[],
 				nulls:'',
-				hisrecords:[]
+				hisrecords:[],
+				cleartype:true
 			}
 		},
 		components:{
@@ -85,21 +80,14 @@
 				
 			},
 			history(i){
-				console.log(i)
-				// this.hisrecords.push(i)
-				
-				if(this.hisrecords == true){
-					return false
-				}else{
-					this.hisrecords.push(i)
-					console.log(this.hisrecords)
-				}
-				// this.hisrecords.push(JSON.stringify(i))
-				// console.log(this.hisrecords)
-				// 
-				// localStorage.hisrecords = this.hisrecords
+				this.cleartype = true
+				this.hisrecords.push(i)
+				// console.log()
+				// console.log(JSON.stringify(this.hisrecords))
+				localStorage.hisrecords =JSON.stringify(this.hisrecords)
 			},
 			clearhistory(){
+				this.cleartype = false
 				localStorage.clear()
 				this.hisrecords=[]
 			}
@@ -108,14 +96,16 @@
 		created(){
 			this.cityname = this.$route.query.cityname
 			this.cityid = this.$route.query.cityname.id
-			// console.log(this.$route.query.cityname)
 			console.log(this.$route.query)
 			
-			// if(localStorage.hisrecords){
-			// 	this.hisrecords.push(JSON.parse(localStorage.hisrecords))
-			// }else{
-			// 	this.hisrecords = []
-			// }
+			if(localStorage.hisrecords){
+ 				// console.log(localStorage.hisrecords)  自动转换成字符串
+				// console.log(JSON.parse(localStorage.hisrecords))   把localStorage转换成对象
+			  this.hisrecords=JSON.parse(localStorage.hisrecords)
+			}else{
+			  this.hisrecords=[]
+			}
+			
 		},
 		
 	}

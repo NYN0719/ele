@@ -4,9 +4,9 @@
     <!-- 头部 -->
     <head-bar>
     	<template v-slot:right>
-    		登录
-    		<!-- <router-link to="/">登录</router-link>/
-    		<router-link to="/">注册</router-link> -->
+    		<!-- 登录 -->
+    		<router-link :to="{name:'about'}">登录</router-link>/
+    		<router-link :to="{name:'about'}">注册</router-link>
     	</template>
     	<template v-slot:left>ele.m</template>
     </head-bar>
