@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+<<<<<<< HEAD
     <!-- <head-bar>大姐夫感到困</head-bar> -->
     <!-- 头部 -->
     <head-bar>
@@ -46,11 +47,27 @@
 			</div> 
 		</div>
 	</div>
+=======
+    <head-bar>
+      <template v-slot:left>ele.m</template>
+      <template v-slot:center>我的</template>
+      <template v-slot:right>登录|注册</template>
+    </head-bar>
+
+    <div>
+      <shop-list :list="item"> </shop-list>
+      <img :src="yanUrl" />
+      
+    </div>
+    <alert-window></alert-window>
+    <footer-bar></footer-bar>
+>>>>>>> 1476253aac29d5576a1490239695f2d633e7f121
   </div>
 
 </template>
 
 <script>
+<<<<<<< HEAD
 	import headBar from '../components/headbar.vue'
 	export default { 
 	  data(){
@@ -131,6 +148,44 @@
 .box{
   width: 740px;
   height:60px;
+=======
+// @ is an alias to /src
+import headBar from "@/components/headBar.vue";
+import footerBar from "@/components/footerBar.vue";
+import shopList from "@/components/shopList.vue";
+import alertWindow from "@/components/alertWindow.vue";
+
+export default {
+  name: "home",
+  components: {
+    headBar,
+    footerBar,
+    shopList,
+    alertWindow,
+  },
+  data() {
+    return {
+      item: 6,
+      yanUrl: ""
+    }
+  },
+  created() {
+    this.$axios.post("http://elm.cangdu.org/v1/captchas").then(data => {
+      this.yanUrl = data.data.code
+    });
+  }
+};
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  width: 730px;
+  height: 60px;
+>>>>>>> 1476253aac29d5576a1490239695f2d633e7f121
   line-height: 60px;
   padding: 5px;
   font-size: 26px;
@@ -140,6 +195,7 @@
   top: 0;
   z-index: 100px;
 }
+<<<<<<< HEAD
 .locationcity{
 	width: 740px;
 	height: 60px;
@@ -172,6 +228,17 @@
 }
 .nowcityjt{
 	float: right;
+=======
+.t_head_left {
+  width: 50%;
+  height: 60px;
+  float: left;
+}
+.t_head_right {
+  width: 50%;
+  height: 60px;
+  float: right;
+>>>>>>> 1476253aac29d5576a1490239695f2d633e7f121
 }
 .hotcities{
 	width: 740px;

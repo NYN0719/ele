@@ -8,10 +8,23 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "lib-flexible": "^0.3.2",
+<<<<<<< HEAD
+=======
+    "swiper": "^4.5.0",
+>>>>>>> 3a6123959040a801c71a06a0a81602ee890ca3b9
     "vue": "^2.6.10",
+<<<<<<< HEAD
     "vue-resource": "^1.5.1",
+=======
+    "vue-axios": "^2.1.4",
+<<<<<<< HEAD
+    "vue-resource": "^1.5.1",
+=======
+>>>>>>> bdb21a5bf79ea046fc99c1f204480216669b0e48
+>>>>>>> 1476253aac29d5576a1490239695f2d633e7f121
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },

@@ -1,16 +1,55 @@
 <template>
   <div id="app">
-    <!-- <div id="nav"> -->
-      <!-- <div class="box">
+<<<<<<< HEAD
+    <div id="nav">
+      <!-- <div class="box"> -->
         
-      </div> -->
-    <!-- </div> -->
+      <!-- </div> -->
+=======
+<<<<<<< HEAD
+    <div class="nav">
+      <!-- 爱我了客服那我再发挖方
+      <router-link to="/register">按钮</router-link> -->
+>>>>>>> bdb21a5bf79ea046fc99c1f204480216669b0e48
+    </div>
+=======
+    
+>>>>>>> 3a6123959040a801c71a06a0a81602ee890ca3b9
     <router-view/>
   </div>
 </template>
+<script>
+
+export default {
+  
+}
+</script>
 
 
 
 <style>
-
+<<<<<<< HEAD
+  /* *{margin: 0;padding: 0}
+  .nav{
+    width: 750px;
+    background: red;
+  } */
+=======
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+a{
+  color: white;
+}
+button{
+  color: white;
+  background-color: rgb(0, 153, 255);
+  border: none;
+  outline: none;
+}
+>>>>>>> 3a6123959040a801c71a06a0a81602ee890ca3b9
 </style>

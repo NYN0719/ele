@@ -1,19 +1,25 @@
 <template>
   <div class="home">
+<<<<<<< HEAD
+
+=======
     <div class="box">
     	我是
     </div>
+>>>>>>> 3a6123959040a801c71a06a0a81602ee890ca3b9
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+  
+
+
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    // HelloWorld
   }
 }
 </script>
