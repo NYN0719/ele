@@ -1,5 +1,11 @@
 <template>
   <div class="search">
+    <head-bar>
+      <template v-slot:left>
+        <router-link to>&lt;</router-link>
+      </template>
+      <template v-slot:center>搜索</template>
+    </head-bar>
     <div class="content">
       <div class="sraech_input">
         <input type="text"  v-model="search_keyword" placeholder="请输入商家或美食名称"/>
@@ -11,12 +17,12 @@
 </template>
 
 <script>
-// import headBar from "../components/headbar.vue";
+import headBar from "@/components/headBar.vue";
 import footerBar from "../components/footerBar";
 export default {
   components: {
     footerBar,
-    // headBar
+    headBar
   },
   data(){
       return {
@@ -25,9 +31,9 @@ export default {
   },
     methods:{
         search(){
-            this.axios.get(`https://elm.cangdu.org/v4/restaurants?geohash=31.22967,121.4762&keyword=${this.search_keyword}`)
+            this.$axios.get(`https://elm.cangdu.org/v4/restaurants?geohash=31.22967,121.4762&keyword=${this.search_keyword}`)
             .then(data=>{
-              
+                console.log(data.data)
             })
         }
     }

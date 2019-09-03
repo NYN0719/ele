@@ -18,6 +18,8 @@ import About from './views/About.vue'
 import Search from './views/search.vue'
 //订单
 import OrderList from './views/orderList.vue'
+//订单详情
+import OrderDetail from './views/orderDetail.vue'
 //我的
 import Myself from './views/myself.vue'
 import searchcity from './views/searchcity(1).vue'
@@ -71,6 +73,11 @@ export default new Router({
       path: '/orderList',
       name: 'orderList',
       component: OrderList,
+    },
+    {
+      path: '/orderDetail/:orderIdx',
+      name: 'orderDetail',
+      component: OrderDetail,
     },
     {
       path: '/myself',
