@@ -2,7 +2,7 @@
     <div class="amend">
         <head-bar>
            
-            <template v-slot:left>&lt</template>
+            <template v-slot:left>&lt;</template>
            
             <slot class="mi">密码登录</slot>           
         </head-bar>

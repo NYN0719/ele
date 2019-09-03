@@ -1,7 +1,7 @@
 <template>
 	<div>
 	    <header>
-		  	<p>{{}}<span>登录|注册</span></p>
+		  	<p>{{this.$route.query.searchname}}<span>登录|注册</span></p>
 		</header>
 		
 		<div class="nav">
@@ -42,7 +42,7 @@
 						评分
 						<div class="song" style="float: right;"><span>蜂鸟专送</span> <span style="color: #3190e8;border: 1px #3190e8 solid;background: #fff;">准时送</span></div>
 					</div>
-					<div class="xian">
+					<div>
 						￥{{i.float_minimum_order_amount}}起送 / 配送费约 ￥{{i.float_delivery_fee}}
 						<div style="float: right;"><span class="time" >{{i.distance}}</span> / <span style="color: #3190e8;">{{i.order_lead_time}}</span></div>
 					</div>
@@ -73,8 +73,6 @@
 				allshop:{},
 			}
 		},
-		methods:{
-		},
 		  mounted(){
 		    new Swiper ('.swiper-container', {
 			    direction: 'horizontal', // 垂直切换选项
@@ -87,6 +85,7 @@
 			  })            
 		  },
 		created(){
+			console.log(this.$route.query)
 			this.shophttp='//elm.cangdu.org/img/'
 			this.typehttp = 'https://fuss10.elemecdn.com';
 //			this.id=3
@@ -107,7 +106,6 @@
 			.then(response=>response.json())
 			.then(response=>{
 				this.allshop = response;
-				console.log(response)
 			})
 		}
 		
@@ -209,7 +207,6 @@ header span{
 .main>.shops>.shoptext>.name span{
 	display: inline-block;
 	font-size: 16px;
-	float: left;
 	padding: 1px 4px;
 	background: yellow;
 	margin-right: 4px;

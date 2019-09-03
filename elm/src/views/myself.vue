@@ -12,12 +12,11 @@
 </template>
 
 <script>
-import headBar from "@/components/headBar.vue";
 import footerBar from "../components/footerBar";
 export default {
   components: {
     footerBar,
-    headBar,
+    // headBar,
   }
 };
 </script>

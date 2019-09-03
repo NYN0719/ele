@@ -1,11 +1,12 @@
+
 <template>
     <div class="register clearfix">
-        <head-bar>
-            <router-link to="/cityplace.vue">
+        <!-- <head-bar> -->
+            <!-- <router-link to="/cityplace.vue">
             <template v-slot:left>&lt;</template>
-            </router-link>
+            </router-link> -->
             <slot class="mi">密码登录</slot>           
-        </head-bar>
+        <!-- </head-bar> -->
        
         <ul>
             <li>
@@ -19,8 +20,8 @@
                 </div>
             </li>
             <li>
-                <input type="text" placeholder="验证码" v-model="yanmodel">
-                <img :src="yanurl" alt="" style="width:200px;height:100px;">
+                <input  class="inputli" type="text" placeholder="验证码" v-model="yanmodel">
+                <img class="yanzhengimg" :src="yanurl" alt="">
                 <span @click="random">换一张</span>
             </li>
         </ul>
@@ -37,12 +38,12 @@
 </template>
 
 <script>
- 
-import headBar from '../components/headbar.vue'
+
+// import headBar from '../components/headbar.vue'
 export default {
     name:'register',
     components:{
-        headBar
+        // headBar
     },
     data(){
         return {
@@ -60,14 +61,14 @@ export default {
     },
     methods: {
         random(){
-            this.$axios.post('https://elm.cangdu.org/v1/captchas')
+            this.axios.post('https://elm.cangdu.org/v1/captchas')
             .then(data=>{
+                console.log(data);
                 this.yanurl = data.data.code
-                console.log(data.data.code);
             })
         },
         handin(){
-            this.$axios.post('https://elm.cangdu.org/v2/login',
+            this.axios.post('https://elm.cangdu.org/v2/login',
             {
                 username:this.user,
                 password:this.pass,
@@ -88,7 +89,6 @@ export default {
                     alert('登录失败')
 
                 }
-                console.log(data);
                 
             })
         },
@@ -175,7 +175,7 @@ li input{
     color:#fff;
 }
 .wen{
-    width: 750px;
+    width: 720px;
     height: 150px;
     box-sizing: border-box;
     margin-left:25px;
@@ -211,5 +211,17 @@ li input{
     background:#000;
     position:absolute;
     top:-5px;
+}
+.inputli{
+    float: left;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+.yanzhengimg{
+    float: left;
+    width: 130px;
+    height: 110px;
+    display: inline-block;
+    margin-right: 20px;
 }
 </style>

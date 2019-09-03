@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import headBar from "@/components/headBar.vue";
+// import headBar from "../components/headbar.vue";
 import footerBar from "../components/footerBar";
 export default {
   components: {
     footerBar,
-    headBar
+    // headBar
   },
   data(){
       return {
@@ -33,7 +33,6 @@ export default {
         search(){
             this.$axios.get(`https://elm.cangdu.org/v4/restaurants?geohash=31.22967,121.4762&keyword=${this.search_keyword}`)
             .then(data=>{
-                console.log(data.data)
             })
         }
     }

@@ -1,5 +1,5 @@
 <template>
-  <dir>
+  <div>
     <div v-for="(item,idx) in list" :key="idx">
       <router-link to="/about">
         <div class="img-box">
@@ -7,7 +7,7 @@
         </div>
       </router-link>
     </div>
-  </dir>
+  </div>
 </template>
 
 <script>

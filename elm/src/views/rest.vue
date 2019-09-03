@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import headers from '../components/headbar'
+// import headers from '../components/headbar'
 export default{
     name:'ly',
-    components:{headers},
+    // components:{headers},
     data(){
         return {
             arr:[],
@@ -66,7 +66,6 @@ export default{
             this.cap()
         },
         amend(){
-           console.log(this.am)
            types = true
             for(let key  in this.am){
                     if(this.am[key] == ''){

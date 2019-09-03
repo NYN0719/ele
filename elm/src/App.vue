@@ -1,25 +1,10 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <div id="nav">
-      <!-- <div class="box"> -->
-        
-      <!-- </div> -->
-=======
-<<<<<<< HEAD
-    <div class="nav">
-      <!-- 爱我了客服那我再发挖方
-      <router-link to="/register">按钮</router-link> -->
->>>>>>> bdb21a5bf79ea046fc99c1f204480216669b0e48
-    </div>
-=======
-    
->>>>>>> 3a6123959040a801c71a06a0a81602ee890ca3b9
-    <router-view/>
+ 
+  <router-view/>
   </div>
 </template>
 <script>
-
 export default {
   
 }
@@ -28,13 +13,6 @@ export default {
 
 
 <style>
-<<<<<<< HEAD
-  /* *{margin: 0;padding: 0}
-  .nav{
-    width: 750px;
-    background: red;
-  } */
-=======
 *{
   margin: 0;
   padding: 0;
@@ -51,5 +29,4 @@ button{
   border: none;
   outline: none;
 }
->>>>>>> 3a6123959040a801c71a06a0a81602ee890ca3b9
 </style>
