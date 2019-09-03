@@ -30,7 +30,7 @@
             <p>注册过的账户可凭账号密码登录</p>
         </div>
         <button @click="handin" class="btn">确定</button>
-        <router-link to="/amend">
+        <router-link to="/rest">
             <p class="chong" @click="reset()">重置密码？</p>
         </router-link>
         
@@ -63,34 +63,37 @@ export default {
         random(){
             this.axios.post('https://elm.cangdu.org/v1/captchas')
             .then(data=>{
-                console.log(data);
                 this.yanurl = data.data.code
             })
         },
         handin(){
-            this.axios.post('https://elm.cangdu.org/v2/login',
-            {
-                username:this.user,
-                password:this.pass,
-                captcha_code:this.yanmodel
-            }
-            )
-            .then(data=>{
-                if(!this.user){
-                    alert('请输入账号')
-                } else if(!this.pass){
-                    alert('请输入密码')
-                }else if(!this.yanmodel){
-                    alert('请输入验证码')
-                }
-                if(this.user == data.data.username && this.pass == data.data.password){
-                    alert('登录成功')
-                }else if(this.pass == data.data.password){
-                    alert('登录失败')
+            if(this.user == '') {
+					alert('请输入账号');
+					return;
+				} else if (this.pass == ''){
+					alert('请输入密码')
+					return;
+				} else if (this.yanmodel == ''){
+					alert('请输入验证码')
+					return;
+				}else {
+					this.axios.post('https://elm.cangdu.org/v2/login', {
+						user: this.user,
+						pass: this.pass,
+						captcha_code: this.verifyNumber
+					}).then((data) => {
+						console.log(data);
+						if(data.data.message == '密码错误') {
+							alert('登录失败');
+						} else if (data.data.message == '验证码不正确'){
+							alert('验证码错误');
+						} else {
+							alert('登录成功');
+                            this.$router.push({path:'/Xiangqing'})
+						}
+					})
 
-                }
-                
-            })
+				}
         },
         reset(){
             this.pass= ''

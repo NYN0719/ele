@@ -1,17 +1,16 @@
 <template>
 	<div class="search">
 		<!-- 搜索的头部 -->
-		<div class="head clearfix">
+		<div class="header clearfix">
 			<div class="changecity">
 	      		<router-link :to="{name: 'cityplace'}">切换城市</router-link>
 	      	</div>
           <div class="leftjt">
-          	<router-link to="/"><</router-link>	
+          	<router-link to="/">&let;</router-link>	
           </div>
-          <p class="centercity">
+         
           	
-          	{{this.$route.query.cityname}}
-          </p >
+          	
         </div>
 		<!-- 搜索盒子 -->
 		<div class="searchbox">
@@ -115,11 +114,11 @@
 </script>
 
 <style>
-	*{margin:0;oadding:0;}
+	*{margin:0;padding: 0;}
 	.clearfix:after,.clearfix:before{display: table;content: '';}
 	.clearfix:after{clear:both;}
-	.head{
-      width: 750px;
+	.header{
+      width: 100%;
       height: 60px;
       padding: 0 10px;
       background: #3190e8;
@@ -140,7 +139,7 @@
     	float: right;
     }
 	.searchbox,.searchhistory{
-		width: 590px;
+		width: 100%;
 		/* background:  #ccc; */
 		font-size:26px;
 		padding: 30px 80px;
@@ -151,21 +150,21 @@
 		font-size: 22px;
 	}
 	.input{
-		width: 560px;
+		width: 100%;
 		height: 60px;
 		border: 1px solid grey;
 		margin-bottom: 10px;
 		outline: none;
 	}
 	.submit{
-		width: 560px;
+		width: 100%;
 		height:60px;
 		margin-top: 10px;
 	}
 	.allplace{
-		width: 750px;
+		width: 100%;
 		background:  #ccc;
-		font-size:26px;
+		font-size:20px;
 		padding: 20px 90px;
 		height: 120px;
 		border-bottom: 1px solid grey;
@@ -198,7 +197,7 @@
 		border-bottom:0.01rem solid #ccc;
 	}
 	.clearhistory{
-		width: 750px;
+		width: 100%;
 		background:  #ccc;
 		font-size:26px;
 		text-align: center;

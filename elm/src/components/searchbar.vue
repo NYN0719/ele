@@ -9,9 +9,9 @@
 	          	<div class="searchjt">
 	          		<slot name="searchjt"></slot>
 	          	</div>
-	          	<p class="jumpcity">
-	          		<slot name="jumpcity"></slot>
-	          	</p>
+				  <div class="abc">
+					  <slot name="abc"></slot>
+				  </div>
 	        </div>
 		</header>
 	</div>
@@ -26,9 +26,9 @@
 <style>
 	a{text-decoration: none;}
 	.header{
-		width: 720px;
-		height: 70px;
-		line-height: 70px;
+		width: 90%;
+		height: 30px;
+		line-height: 30px;
 		font-size: 30px;
 		padding: 15px;
 		background: #3190e8;
@@ -36,17 +36,13 @@
 	}
     .searchjt{
     	width: 20px;
-    	height: 70px;
+    	height: 30px;
      	float: left;
       	/* font-size:26rem; */
     }
-     .jumpcity{
-    	/* font-size:26px; */
-    	text-align: center;
-    }
     .changecity{
       width: 120px;
-      height: 70px;
+      height: 30px;
       text-align: center;
       float: right;
       /* font-size:26px; */

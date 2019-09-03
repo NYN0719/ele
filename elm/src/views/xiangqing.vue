@@ -1,7 +1,11 @@
 <template>
 	<div>
 	    <header>
-		  	<p>{{this.$route.query.searchname}}<span>登录|注册</span></p>
+		  	<p>{{this.$route.query.searchname}}
+				  <router-link to="/register">
+					  <span>登录|注册</span>
+				  </router-link>
+			  </p>
 		</header>
 		
 		<div class="nav">
@@ -151,7 +155,7 @@ header span{
 .all>.icon{
 	width: 100px;
 	height: 100px;
-	margin-left: 20%;
+	margin: 0 auto;
 }
 .all>.icon>img{
 	width: 100%;

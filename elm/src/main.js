@@ -17,7 +17,5 @@ axios.defaults.withCredentials = true;
 new Vue({
   router,
   store,
-  axios,
-  VueAxios,
   render: h => h(App)
 }).$mount('#app')

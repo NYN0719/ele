@@ -6,14 +6,12 @@ import cityplace from './views/cityplace.vue'
 import Xiangqing from './views/xiangqing.vue'
 //import Home from './views/cityplace.vue'
 //import headbar from './components/headbar(2).vue'
-import xiangqing from './views/xiangqing.vue'
 //import VueResource from 'vue-resource'
-import Home from './views/cityplace.vue'
+// import Home from './views/cityplace.vue'
 import Searchcity from './views/searchcity.vue'
 import VueResource from 'vue-resource'
 
 Vue.use(Router)
-Vue.use(VueResource)
 //about
 import About from './views/About.vue'
 //搜索
@@ -34,9 +32,7 @@ export default new Router({
       path: '/',
       name: 'cityplace',
       component: cityplace,
-      name: 'home',
-      component: Home,
-      props:route => ({name:route.query.cityname})
+      // props:route => ({name:route.query.cityname})
     },
     {
       path: '/searchcity',

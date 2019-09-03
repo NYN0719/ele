@@ -12,9 +12,6 @@
 					&lt;
 				</router-link>
 			</template>
-			<template v-slot:jumpcity>
-				{{cityname}}
-			</template>
 		</search-bar>
 		<!-- 搜索盒子 -->
 		<div class="searchbox">
@@ -24,7 +21,7 @@
 		</div>
 		<!-- 搜索的内容 -->
 		<div>
-			<router-link to="/hello" v-for="(i,index) in searchlist">
+			<router-link to="/Xiangqing" v-for="(i,index) in searchlist">
 				<div class="allplace" @click="history(i)">
 		    		<p class="placename">{{i.name}}</p>
 		    		<p class="location">{{i.address}}</p>
@@ -32,12 +29,14 @@
 			</router-link>
 		</div>
 		<!-- 搜索的历史 -->
-		<div class="searchhistory">搜索历史</div>
-		<div class="allplace" v-for="(j,jindex) in hisrecords">
+		<router-link to="/Xiangqing">
+			<div class="searchhistory">搜索历史</div>
+			<div class="allplace" v-for="(j,jindex) in hisrecords">
 			<p>{{j.name}}</p>
 			<p>{{j.address}}</p>
 			
 		</div>
+		</router-link>
 		<div @click="clearhistory" class="clearhistory" v-show="cleartype">清空历史</div>
 	</div>
 </template>
@@ -51,7 +50,7 @@
 				cityname:'',
 				cityid:'',
 				searchtext:'',
-				searchlist:[],
+				searchlist:'',
 				nulls:'',
 				hisrecords:[],
 				cleartype:true
@@ -74,7 +73,7 @@
 						}
 					}).then((res)=>{
 						console.log(res)
-						this.searchlist = res.body
+						this.searchlist = res.data
 					})
 				}
 				
@@ -94,6 +93,7 @@
 		},
 		// 获取前页面的数据
 		created(){
+			console.log(this.$route.query)
 			this.cityname = this.$route.query.cityname
 			this.cityid = this.$route.query.cityname.id
 			console.log(this.$route.query)
@@ -115,10 +115,8 @@
 <style>
 	*{margin:0;oadding:0;}
 	.searchbox,.searchhistory{
-		width: 590px;
-		/* background:  #ccc; */
+		width: 90%;
 		font-size:26px;
-		padding: 30px 80px;
 		border-bottom: 1px solid #e4e4e4;
 	}
 	.searchhistory{
@@ -126,19 +124,19 @@
 		font-size: 22px;
 	}
 	.input{
-		width: 560px;
+		width: 90%;
 		height: 60px;
 		border: 1px solid grey;
 		margin-bottom: 10px;
 		outline: none;
 	}
 	.submit{
-		width: 560px;
+		width: 95%;
 		height:60px;
 		margin-top: 10px;
 	}
 	.allplace{
-		width: 570px;
+		width: 90%;
 		background:  #ccc;
 		font-size:26px;
 		padding: 20px 90px;
@@ -178,5 +176,8 @@
 		font-size:26px;
 		text-align: center;
 		padding: 15px;
+	}
+	.router-link-active{
+		font-size: 22px;
 	}
 </style>
