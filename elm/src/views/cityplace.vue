@@ -2,8 +2,16 @@
   <div class="home">
     <!-- <head-bar>大姐夫感到困</head-bar> -->
     <!-- 头部 -->
-   
-	
+    <!-- <head-bar>大姐夫感到困</head-bar> -->
+    <!-- 头部 -->
+    <head-bar>
+    	<template v-slot:right>
+    		<!-- 登录 -->
+    		<router-link :to="{name:'about'}">登录</router-link>/
+    		<router-link :to="{name:'about'}">注册</router-link>
+    	</template>
+    	<template v-slot:left>ele.m</template>
+    </head-bar>
     <!--  当前定位城市-->
 	<div class="locationcity">
 		<p class="location_l">当前定位城市：</p>
@@ -44,9 +52,13 @@
    
    
   </div>
+  </div>
+
+</template>
 
 </template>
 <script>
+	import headBar from '../components/headbar.vue'
 	export default { 
 	  data(){
 	  	return{
@@ -144,6 +156,14 @@
 	line-height: 60px;
   	font-size:26px;
 }
+.locationcity{
+	width: 740px;
+	height: 60px;
+	padding: 5px;
+	border-bottom:1px solid grey;
+	line-height: 60px;
+  	font-size:26px;
+}
 .location_r{
 	float: right;
 	color: #9f9f9f;
@@ -177,6 +197,41 @@
   width: 50%;
   height: 60px;
   float: right;
+}
+.hotcities{
+	width: 740px;
+	height:60px;
+	padding:5px;
+	line-height:60px;
+  	font-size:26px;
+	}
+.hotcities{
+	color: #666;
+  	margin-bottom: 10px;
+  	
+}
+.hotcitieslist li,.letterbox{
+	width: 24.8%;
+	height: 60px;
+	float: left;
+	border: 1px solid grey;
+	border-left:none; 
+	/* border-bottom: none */
+	font-size:26px;
+	text-align: center;
+	line-height: 60px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:#666;
+}
+.hotcitieslist .letter{
+	width: 740px;
+	height: 40px;
+	padding: 5px;
+	line-height: 40px;
+  	font-size:26px;
+	background: #9e9e9e4f;
 }
 .hotcities{
 	width: 740px;

@@ -4,6 +4,16 @@ import Register from './views/register.vue'
 import Amend from './views/amend.vue'
 import cityplace from './views/cityplace.vue'
 import Xiangqing from './views/xiangqing.vue'
+//import Home from './views/cityplace.vue'
+//import headbar from './components/headbar(2).vue'
+import xiangqing from './views/xiangqing.vue'
+//import VueResource from 'vue-resource'
+import Home from './views/cityplace.vue'
+import Searchcity from './views/searchcity.vue'
+import VueResource from 'vue-resource'
+
+Vue.use(Router)
+Vue.use(VueResource)
 //about
 import About from './views/About.vue'
 //搜索
@@ -15,6 +25,7 @@ import Myself from './views/myself.vue'
 import searchcity from './views/searchcity(1).vue'
 Vue.use(Router)
 //Vue.use(VueResource)
+
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -23,6 +34,22 @@ export default new Router({
       path: '/',
       name: 'cityplace',
       component: cityplace,
+      name: 'home',
+      component: Home,
+      props:route => ({name:route.query.cityname})
+    },
+    {
+      path: '/searchcity',
+      name: 'searchcity',
+      component: Searchcity
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
       path:'/register',
