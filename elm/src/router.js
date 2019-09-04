@@ -25,6 +25,7 @@ import OrderDetail from './views/orderDetail.vue'
 //我的
 import Myself from './views/myself.vue'
 import searchcity from './views/searchcity(1).vue'
+import rest from './views/rest.vue'
 Vue.use(Router)
 //Vue.use(VueResource)
 
@@ -102,6 +103,11 @@ export default new Router({
       path: '/searchcity',
       name: 'searchcity',
       component: searchcity,
+    },
+    {
+      path: '/rest',
+      name: 'rest',
+      component: rest,
     },
   ]
 })

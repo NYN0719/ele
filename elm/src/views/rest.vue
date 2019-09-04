@@ -1,16 +1,18 @@
 <template>
     <div class="ly" style="background:#f5f5f5">
         <!-- {{am}} -->
-        <headers>
-            <slot>重置密码</slot>
+        <head-bar>
+            <!-- <slot>重置密码</slot>
 			<div class="right">
 				<slot name="right"></slot>
 			</div>
 			<div class="left">
 				<slot name="left">&lt;</slot>
-			</div>
+			</div> -->
+            <template v-slot:left>&lt;</template>
+            <template v-slot:center>重置密码</template>
             
-        </headers>
+        </head-bar>
         <div class="ly_center" >
             <div class="account_and_pass"><input class="ac_pa" type="text" v-model="am.us_name" placeholder="账号"></div>
             <div class="account_and_pass"><input class="ac_pa" type="text" v-model="am.old_pass" placeholder="旧密码"></div>
@@ -33,10 +35,10 @@
 </template>
 
 <script>
-// import headers from '../components/headbar'
+import headBar from '../components/headBar.vue'
 export default{
     name:'ly',
-    // components:{headers},
+    components:{headBar},
     data(){
         return {
             arr:[],
@@ -97,51 +99,41 @@ export default{
         margin-top:40px; 
     }
     .account_and_pass{
-        width: 720px;
-		height: 70px;
-        line-height: 70px;
+        width: 100%;
+		height: 96px;
+        line-height: 96px;
 		font-size: 30px;
-		padding: 15px;
         border-bottom: 1px solid #ccc;
         background: #fff;
         /* padding: 0px 5px; */
     }
     .account_and_pass>.ac_pa{
-        width: 600px;
-		height: 70px;
-        line-height: 70px;
+         width: 100%;
 		font-size: 30px;
-		padding:0 15px;
+        padding: 15px;
         border: none;
         outline: none;
          background: #fff;
     }
     .new_pass{
-        width: 500px;
-		height: 70px;
-        line-height: 70px;
+         width: 100%;
 		font-size: 30px;
-		padding:0 15px;
+        padding: 15px;
         border: none;
         outline: none;
          background: #fff;
     }
     .confirm{
-        width: 500px;
-		height: 70px;
-        line-height: 70px;
+         width: 100%;
 		font-size: 30px;
-		padding:0 15px;
+        padding: 15px;
         border: none;
         outline: none;
          background: #fff;
     }
     .auth{
-        width: 300px;
-		height: 70px;
-        line-height: 70px;
 		font-size: 30px;
-		padding:0 15px;
+		padding-left:15px;
         border: none;
         outline: none;
          background: #fff;
@@ -159,8 +151,9 @@ export default{
         cursor: pointer;
     }
     .ly_right{
-        width: 220px;
-        float: right;
+        width: 226px;
+        float: left;
+        margin-top: 14px;
     }
 
     .ly_right>span{
@@ -179,6 +172,10 @@ export default{
         border: none;
         outline: none;
         font-size: 26px;
+        color:#000;
+    }
+    .ly_right>button>span{
+        color: darkcyan;
     }
     .ly_left{
         width: 500px;
