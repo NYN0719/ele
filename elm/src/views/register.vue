@@ -158,6 +158,7 @@ li input{
     width: 80%;
     font-size: 35px;
     outline: none;
+    margin-top: 20px;
     border: none;
 }
 .btn{
@@ -214,7 +215,6 @@ li input{
 .inputli{
     float: left;
     margin-right: 20px;
-    margin-top: 30px;
 }
 .yanzhengimg{
     float: left;

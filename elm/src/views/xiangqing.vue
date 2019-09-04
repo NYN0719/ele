@@ -68,14 +68,11 @@
 	</div>
 </template>
 
-
-
-
-
 <script>
 	import Swiper from 'swiper';
 	import footerBar from '@/components/footerBar.vue'
 	export default{
+		components:{footerBar},
 		data(){
 			return {
 				id:'',

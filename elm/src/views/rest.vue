@@ -1,8 +1,9 @@
 <template>
-    <div class="rest" style="background:#f5f5f5">
+    <div class="ly" style="background:#f5f5f5">
         <!-- {{am}} -->
-        <!-- <headers>
-            <slot>重置密码</slot>
+        <head-bar>
+           
+                <slot>重置密码</slot>
 			<div class="right">
 				<slot name="right"></slot>
 			</div>
@@ -10,7 +11,7 @@
 				<slot name="left">&lt;</slot>
 			</div>
             
-        </headers> -->
+        </head-bar>
         <div class="ly_center" >
             <div class="account_and_pass"><input class="ac_pa" type="text" v-model="am.us_name" placeholder="账号"></div>
             <div class="account_and_pass"><input class="ac_pa" type="text" v-model="am.old_pass" placeholder="旧密码"></div>
@@ -33,9 +34,10 @@
 </template>
 
 <script>
+import headBar from '../components/headBar'
 export default{
-    name:'rest',
-    // components:{headers},
+    name:'ly',
+    components:{headBar},
     data(){
         return {
             arr:[],
@@ -90,6 +92,7 @@ export default{
     },
 }
 </script>
+
 <style scoped>
     .ly_center{
         /* width: 720px; */
@@ -111,7 +114,7 @@ export default{
         line-height: 70px;
 		font-size: 30px;
 		padding:0 15px;
-        border: none;
+        border: none; 
         outline: none;
          background: #fff;
     }
