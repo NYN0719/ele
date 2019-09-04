@@ -1,6 +1,14 @@
 <template>
   <div class="search">
     <div class="content">
+      <div class="header" style="width:100%;height:50px;line-height:50px;">
+       <p style="text-align:center;color:#fff;">
+         <router-link to="/Xiangqing">
+           <span style="font-size:22px;color:#fff;text-align:left;display:inline-block;float:left;"><</span>
+         </router-link>
+         搜索</p>
+        
+      </div>
       <div class="sraech_input">
         <input type="text"  v-model="search_keyword" placeholder="请输入商家或美食名称"/>
         <button @click="search()">提交</button>
@@ -27,9 +35,12 @@ export default {
         search(){
             this.axios.get(`https://elm.cangdu.org/v4/restaurants?geohash=31.22967,121.4762&keyword=${this.search_keyword}`)
             .then(data=>{
-              
+              console.log(data)
             })
         }
+    },
+    created(){
+      this.search()
     }
 };
 </script>
@@ -43,23 +54,27 @@ export default {
 .content {
   width: 100%;
   height: auto;
-  padding: 0 0.2rem;
 }
 .sraech_input {
   width: 100%;
-  height: 80px;
-  margin-top: 0.2rem;
+  height: 120px;
+  padding:20px 20px;
 }
 .sraech_input > input {
   float: left;
   width: 80%;
-  height: 80%;
-  font-size: 0.5rem;
-  border: 1px solid #000000;
+  margin-right: 10px;
+  height: 100%;
+  font-size:40px;
+  font-weight: 500;
+  background: #f2f2f2;
+  outline: none;
+  border-radius:5px;
+  border: 1px solid #e4e4e4;
 }
 .sraech_input > button {
   float: left;
-  width: 15%;
-  height: 80%;
+  width: 18%;
+  height: 100%;
 }
 </style>

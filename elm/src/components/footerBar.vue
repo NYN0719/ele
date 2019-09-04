@@ -1,10 +1,10 @@
 <template>
   <footer>
-    <router-link to="">
+    <router-link to="/Xiangqing">
       <i class="iconfont icon-SSS" :class="{active:num==0}"></i>
       <p>外卖</p>
     </router-link>
-    <router-link to="/search">
+    <router-link to="/Search">
       <i class="iconfont icon-dingdan" :class="{active:num==1}"></i>
       <p>搜索</p>
     </router-link>

@@ -10,7 +10,7 @@ import Xiangqing from './views/xiangqing.vue'
 // import Home from './views/cityplace.vue'
 import Searchcity from './views/searchcity.vue'
 import VueResource from 'vue-resource'
-
+import Rest from './views/rest.vue'
 Vue.use(Router)
 //about
 import About from './views/About.vue'
@@ -32,7 +32,7 @@ export default new Router({
       path: '/',
       name: 'cityplace',
       component: cityplace,
-      // props:route => ({name:route.query.cityname})
+      props:route => ({name:route.query.cityname})
     },
     {
       path: '/searchcity',
@@ -86,6 +86,11 @@ export default new Router({
       path: '/searchcity',
       name: 'searchcity',
       component: searchcity,
+    },
+    {
+      path: '/Rest',
+      name: 'Rest',
+      component: Rest,
     },
   ]
 })

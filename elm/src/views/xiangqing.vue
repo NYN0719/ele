@@ -2,6 +2,13 @@
 	<div>
 	    <header>
 		  	<p>{{this.$route.query.searchname}}
+				 <router-link to="/Search">
+					  <span style="float:left;">
+					  <svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-sousuo"></use>
+						</svg>
+				  </span>
+				 </router-link>
 				  <router-link to="/register">
 					  <span>登录|注册</span>
 				  </router-link>
@@ -57,7 +64,7 @@
 		
 		
 		
-		
+		<footer-bar :num="0"></footer-bar>
 	</div>
 </template>
 
@@ -67,6 +74,7 @@
 
 <script>
 	import Swiper from 'swiper';
+	import footerBar from '@/components/footerBar.vue'
 	export default{
 		data(){
 			return {
@@ -77,6 +85,8 @@
 				allshop:{},
 			}
 		},
+		 components: {footerBar
+  },
 		  mounted(){
 		    new Swiper ('.swiper-container', {
 			    direction: 'horizontal', // 垂直切换选项
@@ -117,8 +127,9 @@
 	
 	
 </script>
-<style>
+<style scoped>
 *{padding: 0;margin: 0;}
+
 header{
 	width: 100%;
 	height: 100px;

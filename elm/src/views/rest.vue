@@ -1,7 +1,7 @@
 <template>
-    <div class="ly" style="background:#f5f5f5">
+    <div class="rest" style="background:#f5f5f5">
         <!-- {{am}} -->
-        <headers>
+        <!-- <headers>
             <slot>重置密码</slot>
 			<div class="right">
 				<slot name="right"></slot>
@@ -10,7 +10,7 @@
 				<slot name="left">&lt;</slot>
 			</div>
             
-        </headers>
+        </headers> -->
         <div class="ly_center" >
             <div class="account_and_pass"><input class="ac_pa" type="text" v-model="am.us_name" placeholder="账号"></div>
             <div class="account_and_pass"><input class="ac_pa" type="text" v-model="am.old_pass" placeholder="旧密码"></div>
@@ -33,9 +33,8 @@
 </template>
 
 <script>
-// import headers from '../components/headbar'
 export default{
-    name:'ly',
+    name:'rest',
     // components:{headers},
     data(){
         return {
@@ -66,6 +65,7 @@ export default{
             this.cap()
         },
         amend(){
+           console.log(this.am)
            types = true
             for(let key  in this.am){
                     if(this.am[key] == ''){
@@ -90,7 +90,6 @@ export default{
     },
 }
 </script>
-
 <style scoped>
     .ly_center{
         /* width: 720px; */

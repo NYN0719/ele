@@ -1,5 +1,15 @@
 <template>
   <div>
+    <header style="line-height:40px; height:40px; background:#3190e8;color:#fff;">
+      <div class="ele" style="float:left; font-size:16px;">
+          ele.me
+      </div>
+      <router-link to="/register">
+        <div class='dz' style="float:right;font-size:16px;">
+        登录|注册
+       </div>
+      </router-link>
+    </header>
     <!--  当前定位城市-->
     <div class="locationcity">
       <p class="location_l">当前定位城市：</p>
@@ -42,10 +52,12 @@
         </div>
       </div>
     </div>
+    <footer-bar :num="0"></footer-bar>
   </div>
 </template>
 <script>
 import { constants } from 'crypto';
+import footerBar from '@/components/footerBar.vue'
 export default {
   data() {
     return {
@@ -54,8 +66,7 @@ export default {
       dwcities: ""
     };
   },
-  components: {
-    // headBar
+  components: {footerBar
   },
   methods: {
     // 热门城市的接口
@@ -131,7 +142,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
