@@ -11,6 +11,7 @@ import Xiangqing from './views/xiangqing.vue'
 import Searchcity from './views/searchcity.vue'
 import VueResource from 'vue-resource'
 import Rest from './views/rest.vue'
+import shipin from './views/shipin.vue'
 Vue.use(Router)
 //about
 import About from './views/About.vue'
@@ -107,6 +108,11 @@ export default new Router({
       path: '/Rest',
       name: 'Rest',
       component: Rest,
+    },
+    {
+      path: '/shipin',
+      name: 'shipin',
+      component: shipin,
     },
   ]
 })
