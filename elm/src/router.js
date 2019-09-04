@@ -16,6 +16,8 @@ Vue.use(Router)
 import About from './views/About.vue'
 //搜索
 import Search from './views/search.vue'
+//搜索点击进入餐馆
+import SearchShop from './views/searchShop.vue'
 //订单
 import OrderList from './views/orderList.vue'
 //订单详情
@@ -50,14 +52,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path:'/register',
-      name:'register',
-      component:Register
+      path: '/register',
+      name: 'register',
+      component: Register
     },
     {
-      path:'/amend',
-      name:'amend',
-      comments:Amend,
+      path: '/amend',
+      name: 'amend',
+      comments: Amend,
     },
     {
       path: '/about',
@@ -68,6 +70,13 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search,
+      childrens: [
+        {
+          path: '/searchShop',
+          name: 'searchShop',
+          component: SearchShop,
+        }
+      ]
     },
     {
       path: '/orderList',

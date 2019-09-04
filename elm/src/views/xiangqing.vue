@@ -54,20 +54,15 @@
 			</div>
 			
 		</div>
-		
-		
-		
-		
+		<footer-bar :num="0"></footer-bar>
 	</div>
 </template>
 
-
-
-
-
 <script>
 	import Swiper from 'swiper';
+	import footerBar from '../components/footerBar'
 	export default{
+		components:{footerBar},
 		data(){
 			return {
 				id:'',
@@ -117,7 +112,7 @@
 	
 	
 </script>
-<style>
+<style scoped>
 *{padding: 0;margin: 0;}
 header{
 	width: 100%;

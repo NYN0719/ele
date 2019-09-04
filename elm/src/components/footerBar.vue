@@ -1,18 +1,18 @@
 <template>
   <footer>
-    <router-link to="">
+    <router-link :to="'/xiangqing'">
       <i class="iconfont icon-SSS" :class="{active:num==0}"></i>
       <p>外卖</p>
     </router-link>
-    <router-link to="/search">
+    <router-link :to="'/search'">
       <i class="iconfont icon-dingdan" :class="{active:num==1}"></i>
       <p>搜索</p>
     </router-link>
-    <router-link to="/orderList">
+    <router-link :to="'/orderList'">
       <i class="iconfont icon-zhinanzhen" :class="{active:num==2}"></i>
       <p>订单</p>
     </router-link>
-    <router-link to="/myself">
+    <router-link :to="'/myself'">
       <i class="iconfont icon-wode" :class="{active:num==3}"></i>
       <p>我的</p>
     </router-link>

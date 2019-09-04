@@ -21,7 +21,7 @@ export default {
 <style scoped>
     header{
         height: 1rem;
-        background: blue;
+        background: #3190e8;
         color: #fff;
         text-align: center;
         line-height: 1rem;
