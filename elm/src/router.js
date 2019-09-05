@@ -26,6 +26,8 @@ import OrderDetail from './views/orderDetail.vue'
 import Myself from './views/myself.vue'
 import searchcity from './views/searchcity(1).vue'
 import rest from './views/rest.vue'
+import integral from './views/integral.vue'
+import balance from './views/balance.vue'
 Vue.use(Router)
 //Vue.use(VueResource)
 
@@ -108,6 +110,16 @@ export default new Router({
       path: '/rest',
       name: 'rest',
       component: rest,
+    },
+    {
+      path: '/integral',
+      name: 'integral',
+      component: integral,
+    },
+    {
+      path: '/balance',
+      name: 'balance',
+      component: balance,
     },
   ]
 })

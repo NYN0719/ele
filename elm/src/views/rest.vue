@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <button class="yes" @click='amend'>确认修改</button>
+        <div class="yes" @click='amend'>确认修改</div>
     </div>
 </template>
 
@@ -82,7 +82,9 @@ export default{
                 confirmpassword:this.am.con,
                 captcha_code:this.am.cap
             },{emulateJSON:true}).then((data)=>{
-                console.log(data)
+                
+                console.log(data);
+                alert(data.data.message)
             })
                 }else{
                     alert('缺失')
@@ -143,17 +145,18 @@ export default{
 		height: 90px;
         line-height: 90px;
 		font-size: 30px;
-		margin: 40px 15px;
         background: green;
         border-radius: 6px;
         color: #fff;
         border: none;
         cursor: pointer;
+            text-align: center;
+        margin: 40px auto;
     }
     .ly_right{
         width: 226px;
-        float: left;
-        margin-top: 14px;
+        float: right;
+        margin: 10px 20px;
     }
 
     .ly_right>span{
@@ -178,7 +181,6 @@ export default{
         color: darkcyan;
     }
     .ly_left{
-        width: 500px;
         float: left;
     }
 </style>
