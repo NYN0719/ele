@@ -9,9 +9,9 @@
 	          	<div class="searchjt">
 	          		<slot name="searchjt"></slot>
 	          	</div>
-				  <div class="abc">
-					  <slot name="abc"></slot>
-				  </div>
+				<div class="abc">
+					<slot name="abc">741</slot>
+				</div>
 	        </div>
 		</header>
 	</div>
@@ -47,4 +47,8 @@
       float: right;
       /* font-size:26px; */
     }
+	.abc{
+		line-height: 55px;
+		text-align: center;
+	}
 </style>

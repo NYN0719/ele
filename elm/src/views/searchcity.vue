@@ -12,6 +12,9 @@
 					&lt;
 				</router-link>
 			</template>
+			<template v-slot:abc>
+				{{cityname}}
+			</template>
 		</search-bar>
 		<!-- 搜索盒子 -->
 		<div class="searchbox">
@@ -21,7 +24,7 @@
 		</div>
 		<!-- 搜索的内容 -->
 		<div>
-			<router-link to="/Xiangqing" v-for="(i,index) in searchlist">
+			<router-link :to="{path: '/xiangqing',query:{searchname:i.address}}" v-for="(i,index) in searchlist" :key="index">
 				<div class="allplace" @click="history(i)">
 		    		<p class="placename">{{i.name}}</p>
 		    		<p class="location">{{i.address}}</p>
@@ -29,9 +32,9 @@
 			</router-link>
 		</div>
 		<!-- 搜索的历史 -->
-		<router-link to="/Xiangqing">
-			<div class="searchhistory">搜索历史</div>
-			<div class="allplace" v-for="(j,jindex) in hisrecords">
+		<div class="searchhistory">搜索历史</div>
+		<router-link :to="{path: '/xiangqing',query:{searchname:j.address}}"  v-for="(j,jindex) in hisrecords" :key="jindex">
+			<div class="allplace">
 			<p>{{j.name}}</p>
 			<p>{{j.address}}</p>
 			
@@ -96,7 +99,6 @@
 			console.log(this.$route.query)
 			this.cityname = this.$route.query.cityname
 			this.cityid = this.$route.query.cityname.id
-			console.log(this.$route.query)
 			
 			if(localStorage.hisrecords){
  				// console.log(localStorage.hisrecords)  自动转换成字符串
@@ -113,7 +115,7 @@
 </script>
 
 <style>
-	*{margin:0;oadding:0;}
+	*{margin:0;padding:0;}
 	.searchbox,.searchhistory{
 		width: 90%;
 		font-size:26px;

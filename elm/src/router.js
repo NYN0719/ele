@@ -16,8 +16,14 @@ import Xiangqing from './views/xiangqing.vue'
 //import VueResource from 'vue-resource'
 // import Home from './views/cityplace.vue'
 import Searchcity from './views/searchcity.vue'
+<<<<<<< HEAD
 // import VueResource from 'vue-resource'
 
+=======
+import VueResource from 'vue-resource'
+import Rest from './views/rest.vue'
+import shipin from './views/shipin.vue'
+>>>>>>> 032d715273bc8f3e7463834baf3577f9ffb672ed
 Vue.use(Router)
 //about
 import About from './views/About.vue'
@@ -43,7 +49,7 @@ export default new Router({
       path: '/',
       name: 'cityplace',
       component: cityplace,
-      // props:route => ({name:route.query.cityname})
+      props:route => ({name:route.query.cityname})
     },
     {
       path: '/searchcity',
@@ -128,6 +134,16 @@ export default new Router({
       path: '/searchcity',
       name: 'searchcity',
       component: searchcity,
+    },
+    {
+      path: '/Rest',
+      name: 'Rest',
+      component: Rest,
+    },
+    {
+      path: '/shipin',
+      name: 'shipin',
+      component: shipin,
     },
   ]
 })
