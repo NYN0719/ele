@@ -2,7 +2,7 @@
   <div class="search">
     <head-bar>
       <template v-slot:left>
-        <router-link to>&lt;</router-link>
+        <router-link to="/Xiangqing" style="font-size:20px;color:#fff;">&lt;</router-link>
       </template>
       <template v-slot:center>搜索</template>
     </head-bar>
@@ -25,7 +25,7 @@
             <div class="shop_name">
               {{item.name}}
               <i>支付</i>
-            </div>
+            </div> 
             <div class="month_count">月售 {{item.recent_order_num}} 单</div>
             <div class="lilter_mi">
               <span>{{item.float_minimum_order_amount}}元起送 /</span>

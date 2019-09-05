@@ -2,6 +2,13 @@
 	<div>
 	    <header>
 		  	<p>{{this.$route.query.searchname}}
+				 <router-link to="/Search">
+					  <span style="float:left;">
+					  <svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-sousuo"></use>
+						</svg>
+				  </span>
+				 </router-link>
 				  <router-link to="/register">
 					  <span>登录|注册</span>
 				  </router-link>
@@ -12,14 +19,14 @@
 			<div class="swiper-container">
 			    <div class="swiper-wrapper">
 			        <div class="swiper-slide">
-			        	<div class="all" v-if="key<=7" v-for="i,key in alltype">
+			        	<div class="all" v-if="key<=7" v-for="(i,key) in alltype" :key="key">
 			        		<div class="icon"><img :src="typehttp + i.image_url"/></div>
 			        		<div class="title">{{i.title}}</div>
 			        	
 			        	</div>
 			        </div>
 			        <div class="swiper-slide">
-			        	<div class="all" v-if="key>=7&&key<=14" v-for="i,key in alltype">
+			        	<div class="all" v-if="key>=7&&key<=14" v-for="(i,key) in alltype" :key="key">
 			        		<div class="icon"><img :src="typehttp + i.image_url"/></div>
 			        		<div>{{i.title}}</div>
 			        	</div>
@@ -35,8 +42,13 @@
 				<i class="iconfont  icon-shangjia" style="font-size: 17px;margin-right: 4px;display:inline-block;width: 20px;height: 20px;"></i>
 				附近商家
 			</div>
-			<div class="shops" v-for="i,key in allshop">
-				<div class="shopimg"><img :src="shophttp + i.image_path"/></div>
+			
+				<div class="shops" v-for="(i,key) in allshop" :key="key">
+				<div class="shopimg">
+					<router-link to="/shipin">
+						<img :src="shophttp + i.image_path" class="img"/>
+					</router-link>
+					</div>
 				<div class="shoptext">
 					<div class="name" style="font-weight: 600;"><span>品牌</span>
 						<div class="shopname">{{i.name}}</div>
@@ -52,15 +64,17 @@
 					</div>
 				</div>
 			</div>
-			
 		</div>
+		
+		
+		
 		<footer-bar :num="0"></footer-bar>
 	</div>
 </template>
 
 <script>
 	import Swiper from 'swiper';
-	import footerBar from '../components/footerBar'
+	import footerBar from '@/components/footerBar.vue'
 	export default{
 		components:{footerBar},
 		data(){
@@ -72,6 +86,8 @@
 				allshop:{},
 			}
 		},
+		 components: {footerBar
+  },
 		  mounted(){
 		    new Swiper ('.swiper-container', {
 			    direction: 'horizontal', // 垂直切换选项
@@ -114,6 +130,7 @@
 </script>
 <style scoped>
 *{padding: 0;margin: 0;}
+
 header{
 	width: 100%;
 	height: 100px;
@@ -148,13 +165,13 @@ header span{
 	text-align: center;
 }
 .all>.icon{
-	width: 100px;
-	height: 100px;
+	width: 100%;
+	height: 100%;
 	margin: 0 auto;
 }
 .all>.icon>img{
-	width: 100%;
-	height: 100%;
+	width: 100px;
+	height: 100px;
 }
 .main{
 	width: 100%;
@@ -176,12 +193,12 @@ header span{
 	box-sizing: border-box;
 	border-bottom: 1px #ccc solid;
 }
-.main>.shops>.shopimg{
+.shopimg{
 	width: 150px;
 	height: 150px;
 	float: left;
 }
-.main>.shops>.shopimg>img{
+.img{
 	width: 100%;
 	height: 100%;
 }

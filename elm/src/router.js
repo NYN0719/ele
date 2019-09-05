@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//登录注册
 import Register from './views/register.vue'
+//服务中心
+import serve from './views/serve.vue'
+//说明
+import Explain from './views/explain.vue'
+//下载app
+import Download from './views/download.vue'
 import Amend from './views/amend.vue'
 import cityplace from './views/cityplace.vue'
 import Xiangqing from './views/xiangqing.vue'
-//import Home from './views/cityplace.vue'
-//import headbar from './components/headbar(2).vue'
-//import VueResource from 'vue-resource'
-// import Home from './views/cityplace.vue'
 import Searchcity from './views/searchcity.vue'
-import VueResource from 'vue-resource'
-
+import shipin from './views/shipin.vue'
 Vue.use(Router)
 //about
 import About from './views/About.vue'
@@ -25,6 +27,9 @@ import OrderDetail from './views/orderDetail.vue'
 //我的
 import Myself from './views/myself.vue'
 import searchcity from './views/searchcity(1).vue'
+import rest from './views/rest.vue'
+import integral from './views/integral.vue'
+import balance from './views/balance.vue'
 Vue.use(Router)
 //Vue.use(VueResource)
 
@@ -36,7 +41,7 @@ export default new Router({
       path: '/',
       name: 'cityplace',
       component: cityplace,
-      // props:route => ({name:route.query.cityname})
+      props:route => ({name:route.query.cityname})
     },
     {
       path: '/searchcity',
@@ -52,9 +57,28 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
+      //登录注册
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      //服务中心
+      path: '/serve',
+      name: 'serve',
+      component: serve
+    },
+    {
+      //说明
+      path:'/explain',
+      name:'explain',
+      component:Explain
+    },
+    {
+      //下载app
+      path: '/download',
+      name: 'download',
+      component: Download
     },
     {
       path: '/amend',
@@ -100,6 +124,26 @@ export default new Router({
       path: '/searchcity',
       name: 'searchcity',
       component: searchcity,
+    },
+    {
+      path: '/rest',
+      name: 'rest',
+      component: rest,
+    },
+    {
+      path: '/integral',
+      name: 'integral',
+      component: integral,
+    },
+    {
+      path: '/balance',
+      name: 'balance',
+      component: balance,
+    },
+    {
+      path: '/shipin',
+      name: 'shipin',
+      component: shipin,
     },
   ]
 })

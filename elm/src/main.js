@@ -5,6 +5,7 @@ import store from './store'
 import Register from './views/register'
 import 'lib-flexible'
 import rest from './views/rest.vue'
+// 图标
 
 import "swiper/dist/css/swiper.min.css"
 import './assets/css/icon_footer/iconfont.css'
