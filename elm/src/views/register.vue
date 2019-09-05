@@ -1,14 +1,21 @@
 
 <template>
     <div class="register clearfix">
-        <!-- <head-bar> -->
-            <!-- <router-link to="/cityplace.vue">
-            <template v-slot:left>&lt;</template>
-            </router-link> -->
-            <slot class="mi">密码登录</slot>           
-        <!-- </head-bar> -->
+<<<<<<< HEAD
+        <header-bar> 
+            <template v-slot:left>
+            <router-link to="myself">&lt;</router-link>
+            </template>
+            <template v-slot:center>密码登录</template>
+        </header-bar>
        
         <ul>
+=======
+       <header style="height:50px;text-align:center;line-height:50px;font-size: 18px;background:blue;">
+        密码登录
+       </header>
+        <ul style="margin-top:0;">
+>>>>>>> 032d715273bc8f3e7463834baf3577f9ffb672ed
             <li>
                 <input type="text" placeholder="账号" v-model="user">
             </li>
@@ -38,13 +45,12 @@
 </template>
 
 <script>
-
+import headerBar from '../components/headBar.vue'
 // import headBar from '../components/headbar.vue'
 export default {
+    components:{headerBar},
     name:'register',
-    components:{
-        // headBar
-    },
+   
     data(){
         return {
             user:'',
@@ -131,9 +137,8 @@ export default {
 			zoom: 1;
 		}
 .register{
-    width: 750px;
-    background: #f5f5f5;
-    height: auto;
+    width: 100%;
+    height:auto ;
    
 }
 .red{
@@ -145,12 +150,10 @@ export default {
     
 }
 ul{
-    width: 750px;
-     margin-top: 30px;
-     height: auto;
+    width: 80%;
 }
 li{
-    width: 750px;
+    width: 80%;
     height: 110px;
     border-bottom: 1px solid #ccc;
     background: #fff;
@@ -162,23 +165,24 @@ li{
 }
 li input{
     height: 35px;
-    width: 400px;
+    width: 80%;
     font-size: 35px;
     outline: none;
+    margin-top: 20px;
     border: none;
 }
 .btn{
-    width: 700px;
+    width: 95%;
     height: 100px;
     background: rgb(14, 196, 75);
     font-size: 30px;
     box-sizing: border-box;
-    margin-left:25px;
     border-radius: 10px;
+    margin: 0 2.5%;
     color:#fff;
 }
 .wen{
-    width: 720px;
+    width: 80%;
     height: 150px;
     box-sizing: border-box;
     margin-left:25px;
@@ -194,6 +198,7 @@ li input{
     box-sizing: border-box;
     float: right;
     margin: 50px;
+    line-height: 50px;
     text-align: right;
     color:blue;
 }
@@ -204,11 +209,13 @@ li input{
     position:absolute;
     right:50px;
     top:35px;
+    transition:.35s;
     border-radius: 20px;
 }
 .yuan{
     display: block;
     width: 40px;
+    
     height: 40px;
     border-radius: 50%;
     background:#000;
@@ -218,7 +225,6 @@ li input{
 .inputli{
     float: left;
     margin-right: 20px;
-    margin-top: 30px;
 }
 .yanzhengimg{
     float: left;

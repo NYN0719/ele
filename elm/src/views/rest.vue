@@ -155,8 +155,13 @@ export default{
     }
     .ly_right{
         width: 226px;
+<<<<<<< HEAD
         float: right;
         margin: 10px 20px;
+=======
+        float: left;
+        margin-top: 14px;
+>>>>>>> a043d2da2661814eb2a862bc8e0b8728a759d120
     }
 
     .ly_right>span{

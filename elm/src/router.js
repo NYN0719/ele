@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//登录注册
 import Register from './views/register.vue'
+//服务中心
+import serve from './views/serve.vue'
+//说明
+import Explain from './views/explain.vue'
+//下载app
+import Download from './views/download.vue'
 import Amend from './views/amend.vue'
 import cityplace from './views/cityplace.vue'
 import Xiangqing from './views/xiangqing.vue'
@@ -9,8 +16,14 @@ import Xiangqing from './views/xiangqing.vue'
 //import VueResource from 'vue-resource'
 // import Home from './views/cityplace.vue'
 import Searchcity from './views/searchcity.vue'
-import VueResource from 'vue-resource'
+<<<<<<< HEAD
+// import VueResource from 'vue-resource'
 
+=======
+import VueResource from 'vue-resource'
+import Rest from './views/rest.vue'
+import shipin from './views/shipin.vue'
+>>>>>>> 032d715273bc8f3e7463834baf3577f9ffb672ed
 Vue.use(Router)
 //about
 import About from './views/About.vue'
@@ -39,7 +52,7 @@ export default new Router({
       path: '/',
       name: 'cityplace',
       component: cityplace,
-      // props:route => ({name:route.query.cityname})
+      props:route => ({name:route.query.cityname})
     },
     {
       path: '/searchcity',
@@ -55,9 +68,28 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
+      //登录注册
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      //服务中心
+      path: '/serve',
+      name: 'serve',
+      component: serve
+    },
+    {
+      //说明
+      path:'/explain',
+      name:'explain',
+      component:Explain
+    },
+    {
+      //下载app
+      path: '/download',
+      name: 'download',
+      component: Download
     },
     {
       path: '/amend',
@@ -107,6 +139,7 @@ export default new Router({
       component: searchcity,
     },
     {
+<<<<<<< HEAD
       path: '/rest',
       name: 'rest',
       component: rest,
@@ -120,6 +153,16 @@ export default new Router({
       path: '/balance',
       name: 'balance',
       component: balance,
+=======
+      path: '/Rest',
+      name: 'Rest',
+      component: Rest,
+    },
+    {
+      path: '/shipin',
+      name: 'shipin',
+      component: shipin,
+>>>>>>> a043d2da2661814eb2a862bc8e0b8728a759d120
     },
   ]
 })

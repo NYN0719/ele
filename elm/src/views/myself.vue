@@ -2,7 +2,7 @@
   <div class="myself">
     <head-bar>
       <template v-slot:left>
-        <router-link to>&lt;</router-link>
+        <router-link to="/Xiangqing" style="font-size:20px; color:#fff;">&lt;</router-link>
       </template>
       <template v-slot:center>我的</template>
     </head-bar>
@@ -72,10 +72,10 @@
         </ul>
 
         <ul class="public_serve">
-          <router-link to>
+          <router-link to="/serve">
             <li class="my_serve"><i class="iconfont icon-fwzx"></i>服务中心<span class="right_go">&gt;</span></li>
           </router-link>
-          <router-link to>
+          <router-link to="/download">
             <li class="my_app"><i class="iconfont icon-elem"></i>下载饿了么app<span class="right_go">&gt;</span></li>
           </router-link>
         </ul>
@@ -128,6 +128,9 @@ export default {
   height: auto;
   position: relative;
 }
+.public_serve{
+  margin-top:0;
+}
 .my_header {
   min-height: 180px;
   padding: 0.2rem 0.3rem;
@@ -151,7 +154,7 @@ export default {
   border-radius: 50%;
 }
 .my_name{
-  width: 500px;
+  width: 80%;
   height: 120px;
   overflow: hidden;
   font-size: 0.5rem;
@@ -202,9 +205,6 @@ export default {
 }
 .my_list_msgs>a,.public_serve>a{
   line-height: 80px;
-}
-.my_list_msgs{
-  margin-bottom: 0.3rem;
 }
 i{
   font-style: normal;
