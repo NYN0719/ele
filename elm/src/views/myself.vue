@@ -72,10 +72,10 @@
         </ul>
 
         <ul class="public_serve">
-          <router-link to>
+          <router-link to="/serve">
             <li class="my_serve"><i class="iconfont icon-fwzx"></i>服务中心<span class="right_go">&gt;</span></li>
           </router-link>
-          <router-link to>
+          <router-link to="/download">
             <li class="my_app"><i class="iconfont icon-elem"></i>下载饿了么app<span class="right_go">&gt;</span></li>
           </router-link>
         </ul>

@@ -1,12 +1,12 @@
 
 <template>
     <div class="register clearfix">
-        <!-- <head-bar> -->
-            <!-- <router-link to="/cityplace.vue">
-            <template v-slot:left>&lt;</template>
-            </router-link> -->
-            <slot class="mi">密码登录</slot>           
-        <!-- </head-bar> -->
+        <header-bar> 
+            <template v-slot:left>
+            <router-link to="myself">&lt;</router-link>
+            </template>
+            <template v-slot:center>密码登录</template>
+        </header-bar>
        
         <ul>
             <li>
@@ -38,13 +38,12 @@
 </template>
 
 <script>
-
+import headerBar from '../components/headBar.vue'
 // import headBar from '../components/headbar.vue'
 export default {
+    components:{headerBar},
     name:'register',
-    components:{
-        // headBar
-    },
+   
     data(){
         return {
             user:'',

@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//登录注册
 import Register from './views/register.vue'
+//服务中心
+import serve from './views/serve.vue'
+//说明
+import Explain from './views/explain.vue'
+//下载app
+import Download from './views/download.vue'
 import Amend from './views/amend.vue'
 import cityplace from './views/cityplace.vue'
 import Xiangqing from './views/xiangqing.vue'
@@ -9,7 +16,7 @@ import Xiangqing from './views/xiangqing.vue'
 //import VueResource from 'vue-resource'
 // import Home from './views/cityplace.vue'
 import Searchcity from './views/searchcity.vue'
-import VueResource from 'vue-resource'
+// import VueResource from 'vue-resource'
 
 Vue.use(Router)
 //about
@@ -52,9 +59,28 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
+      //登录注册
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      //服务中心
+      path: '/serve',
+      name: 'serve',
+      component: serve
+    },
+    {
+      //说明
+      path:'/explain',
+      name:'explain',
+      component:Explain
+    },
+    {
+      //下载app
+      path: '/download',
+      name: 'download',
+      component: Download
     },
     {
       path: '/amend',
