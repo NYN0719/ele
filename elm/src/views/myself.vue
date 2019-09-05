@@ -2,7 +2,7 @@
   <div class="myself">
     <head-bar>
       <template v-slot:left>
-        <router-link to="/Xxiangqing" style="font-size:20px; color:#fff;">&lt;</router-link>
+        <router-link to="/Xiangqing" style="font-size:20px; color:#fff;">&lt;</router-link>
       </template>
       <template v-slot:center>我的</template>
     </head-bar>
@@ -154,7 +154,7 @@ export default {
   border-radius: 50%;
 }
 .my_name{
-  width: 500px;
+  width: 80%;
   height: 120px;
   overflow: hidden;
   font-size: 0.5rem;
