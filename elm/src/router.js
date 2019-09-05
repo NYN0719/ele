@@ -70,13 +70,11 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search,
-      childrens: [
-        {
-          path: '/searchShop',
-          name: 'searchShop',
-          component: SearchShop,
-        }
-      ]
+    },
+    {
+      path: '/searchShop/:shopID',
+      name: 'searchShop',
+      component: SearchShop,
     },
     {
       path: '/orderList',

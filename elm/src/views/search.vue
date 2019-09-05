@@ -11,7 +11,12 @@
         <input type="text" v-model="search_keyword" placeholder="请输入商家或美食名称" />
         <button @click="search()">提交</button>
       </div>
-      <router-link to v-for="(item,idx) in search_show" :key="idx">
+      <router-link
+        :to="'/searchShop/'+item.id"
+        v-for="(item,idx) in search_show"
+        :key="idx"
+        v-if="search_show.status!=0"
+      >
         <div class="shop_lists">
           <div class="cover_shop">
             <img :src="'//elm.cangdu.org/img/'+item.image_path" alt="图片加载失败" />
@@ -23,12 +28,13 @@
             </div>
             <div class="month_count">月售 {{item.recent_order_num}} 单</div>
             <div class="lilter_mi">
-              <span>{{item.float_minimum_order_amount}}元起送 / </span>
+              <span>{{item.float_minimum_order_amount}}元起送 /</span>
               <span>距离{{item.distance}}</span>
             </div>
           </div>
         </div>
       </router-link>
+      <div v-if="search_show.status==0">{{search_show.message}}</div>
     </div>
     <footer-bar :num="1"></footer-bar>
   </div>
@@ -40,7 +46,7 @@ import footerBar from "../components/footerBar";
 export default {
   components: {
     footerBar,
-    headBar
+    headBar,
   },
   data() {
     return {
@@ -50,9 +56,11 @@ export default {
   },
   methods: {
     search() {
+      // http://elm.cangdu.org/v4/restaurants?extras[]=restaurant_activity&geohash=31.22299,121.36025&keyword=%E6%88%91&type=search
       this.$axios
         .get(
-          `https://elm.cangdu.org/v4/restaurants?geohash=31.22967,121.4762&keyword=${this.search_keyword}`
+          `https://elm.cangdu.org/v4/restaurants?geohash=31.22299,121.36025&keyword=${this.search_keyword}`
+          ,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
         )
         .then(data => {
           console.log(data.data);
