@@ -1,8 +1,14 @@
 <template>
     <div>
         <div class="ly-content">
+                <router-link to="/myself">
             <h3>请重新进入</h3>
-            <p>请返回后重新进入积分商城~</p>
+        </router-link>
+            <p>
+               
+                        请返回后重新进入积分商城~
+                
+            </p>
             <img src="//yun.duiba.com.cn/webapp/img/retrylogin.png" alt="">
         </div>
     </div>

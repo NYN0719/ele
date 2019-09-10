@@ -2,7 +2,7 @@
   <div class="orderDetail">
     <head-bar>
       <template v-slot:left>
-        <router-link to :back="123">&lt;</router-link>
+        <router-link to='/orderList'>&lt;</router-link>
       </template>
       <template v-slot:center>订单详情</template>
     </head-bar>

@@ -19,11 +19,12 @@
 			<div class="swiper-container">
 			    <div class="swiper-wrapper">
 			        <div class="swiper-slide">
-			        	<div class="all" v-if="key<=7" v-for="(i,key) in alltype" :key="key">
-			        		<div class="icon"><img :src="typehttp + i.image_url"/></div>
-			        		<div class="title">{{i.title}}</div>
-			        	
-			        	</div>
+						<router-link :to="{name:'orderfoods',query:{orderfoodes:i}}"  v-for="(i,key) in alltype" :key="key">
+							<div class="all" v-if="key<=7">
+								<div class="icon"><img :src="typehttp + i.image_url"/></div>
+								<div class="title">{{i.title}}</div>
+							</div>
+						</router-link>
 			        </div>
 			        <div class="swiper-slide">
 			        	<div class="all" v-if="key>=7&&key<=14" v-for="(i,key) in alltype" :key="key">
@@ -163,11 +164,14 @@ header span{
 	margin-bottom: 14px;
 	float: left;
 	text-align: center;
+}.title{
+	border:0;
 }
 .all>.icon{
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+	padding-left:0;
 }
 .all>.icon>img{
 	width: 100px;
@@ -181,7 +185,6 @@ header span{
 .main>.top{
 	height: 80px;
 	line-height: 80px;
-	padding-left: 1em;
 	text-align: left;
 	border-top: 1px #ccc solid;
 	border-bottom: 1px #ccc solid;
@@ -191,7 +194,6 @@ header span{
 	height: 200px;
 	padding:18px ;
 	box-sizing: border-box;
-	border-bottom: 1px #ccc solid;
 }
 .shopimg{
 	width: 150px;

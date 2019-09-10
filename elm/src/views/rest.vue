@@ -9,7 +9,11 @@
 			<div class="left">
 				<slot name="left">&lt;</slot>
 			</div> -->
-            <template v-slot:left>&lt;</template>
+            <template v-slot:left>
+                <router-link to="/register">
+                        &lt;
+                </router-link>
+            </template>
             <template v-slot:center>重置密码</template>
             
         </head-bar>
@@ -98,7 +102,7 @@ export default{
 <style scoped>
     .ly_center{
         /* width: 720px; */
-        margin-top:40px; 
+        /* margin-top:40px;  */
     }
     .account_and_pass{
         width: 100%;

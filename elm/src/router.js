@@ -30,6 +30,10 @@ import searchcity from './views/searchcity(1).vue'
 import rest from './views/rest.vue'
 import integral from './views/integral.vue'
 import balance from './views/balance.vue'
+import youhui from './views/youhui.vue'
+import orderfoods from './views/orderfoods(1).vue'
+import myyouhui from './views/myyouhui.vue'
+import account from './views/account.vue'
 Vue.use(Router)
 //Vue.use(VueResource)
 
@@ -144,6 +148,26 @@ export default new Router({
       path: '/shipin',
       name: 'shipin',
       component: shipin,
+    },
+    {
+      path: '/orderfoods',
+      name: 'orderfoods',
+      component: orderfoods
+    },
+    {
+      path: '/youhui',
+      name: 'youhui',
+      component: youhui
+    },
+    {
+      path: '/myyouhui',
+      name: 'myyouhui',
+      component: myyouhui
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: account
     },
   ]
 })

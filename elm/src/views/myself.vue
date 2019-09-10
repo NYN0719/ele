@@ -2,7 +2,9 @@
   <div class="myself">
     <head-bar>
       <template v-slot:left>
-        <router-link to="/Xiangqing" style="font-size:20px; color:#fff;">&lt;</router-link>
+        <router-link to="/Xiangqing" style="font-size:20px; color:#fff;">
+          &lt;
+        </router-link>
       </template>
       <template v-slot:center>我的</template>
     </head-bar>
@@ -11,7 +13,9 @@
       <!-- 头像 -->
       <div class="my_header">
         <div class="header_img">
-          <img :src="'http://elm.cangdu.org/img/'+user_details.avatar" />
+          <router-link to="/account">
+              <img :src="'http://elm.cangdu.org/img/'+user_details.avatar" />
+          </router-link>
         </div>
         <div class="my_name">
           <h3>{{user_details.username}}</h3>
@@ -41,7 +45,11 @@
                 <i>3</i> 个
               </span>
             </div>
-            <div>我的优惠</div>
+            <div>
+             <router-link to='/myyouhui'>
+                我的优惠
+             </router-link>
+            </div>
           </div>
         </router-link>
         <router-link :to="'/balance'">
@@ -66,7 +74,7 @@
           <router-link :to="'/integral'">
             <li><i class="iconfont icon-shangcheng"></i>积分商城<span class="right_go">&gt;</span></li>
           </router-link>
-          <router-link to>
+          <router-link to='/youhui'>
             <li><i class="iconfont icon-huangguan"></i>饿了么会员卡<span class="right_go">&gt;</span></li>
           </router-link>
         </ul>
@@ -198,13 +206,13 @@ export default {
 .my_list{
   width: 100%;
   height: auto;
-  font-size: 0.5rem;
+  font-size: 20px;
 }
 .my_list .iconfont{
   font-size: 0.58rem;
 }
 .my_list_msgs>a,.public_serve>a{
-  line-height: 80px;
+  line-height: 50px;
 }
 i{
   font-style: normal;

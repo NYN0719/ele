@@ -1,7 +1,11 @@
 <template>
     <div class="ly">
         <head-bar>
-            <template v-slot:left>&lt;</template>
+            <template v-slot:left>
+               <router-link to="/myself">
+                    &lt;
+               </router-link>
+            </template>
             <template v-slot:center>我的余额</template>
         </head-bar>
         <div class="content_container">
