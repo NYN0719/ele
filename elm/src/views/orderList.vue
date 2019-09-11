@@ -3,7 +3,7 @@
   <div class="order">
     <head-bar>
       <template v-slot:left>
-        <router-link to="/Xiangqing" style="font-size:20px;color:#fff;">&lt;</router-link>
+        <router-link to="/myself" style="font-size:20px;color:#fff;">&lt;</router-link>
       </template>
       <template v-slot:center>订单列表</template>
     </head-bar>
