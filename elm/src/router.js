@@ -24,6 +24,8 @@ import SearchShop from './views/searchShop.vue'
 import OrderList from './views/orderList.vue'
 //订单详情
 import OrderDetail from './views/orderDetail.vue'
+//商品列表
+import shoplist from './components/shopList.vue'
 //我的
 import Myself from './views/myself.vue'
 import searchcity from './views/searchcity(1).vue'
@@ -49,12 +51,9 @@ export default new Router({
       component: Searchcity
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/shoplist',
+      name: 'shoplist',
+      component: shoplist
     },
     {
       //登录注册

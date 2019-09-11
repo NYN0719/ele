@@ -69,6 +69,7 @@
 					this.nulls = '输入为空!!'
 					this.searchlist = ''
 				}else{
+					// https://elm.cangdu.org/v1/pois?city_id=1&keyword=迪士尼&type=search
 					this.$http.get('https://elm.cangdu.org/v1/pois',{
 						params:{
 							city_id:this.cityid,
@@ -96,7 +97,7 @@
 		},
 		// 获取前页面的数据
 		created(){
-			console.log(this.$route.query)
+			console.log(this.$route)
 			this.cityname = this.$route.query.cityname
 			this.cityid = this.$route.query.cityname.id
 			

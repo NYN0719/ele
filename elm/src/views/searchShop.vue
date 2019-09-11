@@ -58,13 +58,22 @@ export default {
 .goback {
   width: 100%;
   line-height: 100px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  background-color: rgba(200, 200, 200, .5)
+}
+.goback a{
+  font-size: 0.5rem;
+  font-weight: 600;
+}
+.shop a{
+  color: white;
 }
 header {
   min-height: 200px;
   background-size: cover;
+  color: white;
 }
 header .shop_detail,
 header .shop_active {
@@ -78,6 +87,12 @@ header .shop_active {
 }
 .shop_detail > div {
   float: left;
+}
+.shop_detail > div:last-of-type {
+  float: right;
+  line-height: 200px;
+  font-size: 0.6rem;
+  font-weight: 600;
 }
 .shop_cover {
   width: 150px;
